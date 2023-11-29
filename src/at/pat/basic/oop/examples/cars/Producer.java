@@ -4,12 +4,12 @@ import java.util.ArrayList;
 
 public class Producer {
     private String brand;
-    private int sale;
+    private double sale;
     private String country;
     private ArrayList<Car> cars;
 
     //constructor
-    public Producer(String brand, int sale, String country) {
+    public Producer(String brand, double sale, String country) {
         this.brand = brand;
         this.sale = sale;
         this.country = country;
@@ -31,11 +31,11 @@ public class Producer {
         this.brand = brand;
     }
 
-    public int getSale() {
+    public double getSale() {
         return sale;
     }
 
-    public void setSale(int sale) {
+    public void setSale(double sale) {
         this.sale = sale;
     }
 

@@ -10,12 +10,12 @@ public class Car {
     private int basePrice;
     private double baseUsage;
     private Engine engine;
-    private int distanceDriven;
+    private double distanceDriven;
     private double realPrice;
     private Producer producer;
     //constructor
 
-    public Car(String color, int maxSpeed, int basePrice, double baseUsage, Engine engine, int distanceDriven) {
+    public Car(String color, int maxSpeed, int basePrice, double baseUsage, Engine engine, double distanceDriven) {
         this.color = color;
         this.maxSpeed = maxSpeed;
         this.basePrice = basePrice;
@@ -25,11 +25,21 @@ public class Car {
     }
 
     //code
-    //
+    //calculate realPrice
     public void calcrealPrice(){
-        this.realPrice = (producer.getSale()/100) * this.basePrice + this.basePrice;
+        this.realPrice = (this.producer.getSale()/100) * this.basePrice + this.basePrice;
 
         System.out.println(realPrice);
+    }
+    //drive
+    public double drive(){
+        this.distanceDriven += 10000;
+        if(this.distanceDriven > 50000){
+            this.baseUsage *= 1.098;
+        }
+        System.out.println(this.distanceDriven);
+        return this.distanceDriven;
+
     }
     //getterandsetter
 
@@ -62,12 +72,7 @@ public class Car {
     }
 
     public void setBaseUsage(int baseUsage) {
-        if (this.distanceDriven <= 50000){
             this.baseUsage = baseUsage;
-        }
-        else if (this.distanceDriven < 50000) {
-            this.baseUsage = baseUsage * 1.098;
-        }
     }
 
     public Engine getEngine() {
@@ -79,11 +84,11 @@ public class Car {
     }
 
 
-    public int getDistanceDriven() {
+    public double getDistanceDriven() {
         return distanceDriven;
     }
 
-    public void setDistanceDriven(int distanceDriven) {
+    public void setDistanceDriven(double distanceDriven) {
         this.distanceDriven = distanceDriven;
     }
 
@@ -93,5 +98,13 @@ public class Car {
 
     public void setRealPrice(double realPrice) {
         this.realPrice = realPrice;
+    }
+
+    public Producer getProducer() {
+        return producer;
+    }
+
+    public void setProducer(Producer producer) {
+        this.producer = producer;
     }
 }

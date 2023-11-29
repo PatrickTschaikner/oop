@@ -10,7 +10,10 @@ public static void main(String[]args) {
     Producer producer = new Producer("Mecredes", 20, "Deutschland");
 
     producer.addcar(car);
+    car.setProducer(producer);
 
     car.calcrealPrice();
+    car.drive();
+
     }
 }
