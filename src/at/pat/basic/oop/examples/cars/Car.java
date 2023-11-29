@@ -8,12 +8,14 @@ public class Car {
     private String color;
     private int maxSpeed;
     private int basePrice;
-    private float baseUsage;
+    private double baseUsage;
     private Engine engine;
     private int distanceDriven;
-
+    private double realPrice;
+    private Producer producer;
     //constructor
-    public Car(String color, int maxSpeed, int basePrice, int baseUsage, Engine engine, int distanceDriven) {
+
+    public Car(String color, int maxSpeed, int basePrice, double baseUsage, Engine engine, int distanceDriven) {
         this.color = color;
         this.maxSpeed = maxSpeed;
         this.basePrice = basePrice;
@@ -23,8 +25,12 @@ public class Car {
     }
 
     //code
+    //
+    public void calcrealPrice(){
+        this.realPrice = (producer.getSale()/100) * this.basePrice + this.basePrice;
 
-
+        System.out.println(realPrice);
+    }
     //getterandsetter
 
     public String getColor() {
@@ -51,12 +57,17 @@ public class Car {
         this.basePrice = basePrice;
     }
 
-    public float getBaseUsage() {
+    public double getBaseUsage() {
         return baseUsage;
     }
 
     public void setBaseUsage(int baseUsage) {
-        this.baseUsage = baseUsage;
+        if (this.distanceDriven <= 50000){
+            this.baseUsage = baseUsage;
+        }
+        else if (this.distanceDriven < 50000) {
+            this.baseUsage = baseUsage * 1.098;
+        }
     }
 
     public Engine getEngine() {
@@ -74,5 +85,13 @@ public class Car {
 
     public void setDistanceDriven(int distanceDriven) {
         this.distanceDriven = distanceDriven;
+    }
+
+    public double getRealPrice() {
+        return realPrice;
+    }
+
+    public void setRealPrice(double realPrice) {
+        this.realPrice = realPrice;
     }
 }

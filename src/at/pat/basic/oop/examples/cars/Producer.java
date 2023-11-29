@@ -18,6 +18,7 @@ public class Producer {
 
 
     //code
+    //realPrice berechnung
 
     //Producer hinzufügen
     public void addcar(Car car){this.cars.add(car);}
