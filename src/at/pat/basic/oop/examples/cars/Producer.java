@@ -20,7 +20,7 @@ public class Producer {
     //code
 
     //Producer hinzufügen
-    public void car(Car car){this.cars.add(car);}
+    public void addcar(Car car){this.cars.add(car);}
     //getterandsetter
     public String getBrand() {
         return brand;
