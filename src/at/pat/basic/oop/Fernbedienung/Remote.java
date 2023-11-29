@@ -16,9 +16,7 @@ public class Remote {
     }
 
     //Füge Battery hinzu
-    public void addBatteries(Battery battery){
-        this.batteries.add(battery);
-    }
+    public void addBatteries(Battery battery){this.batteries.add(battery);}
 
     //Einschalten
     public void turnOn(){
