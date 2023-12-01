@@ -14,7 +14,7 @@ public class Remote {
         this.hasPower = hasPower;
         this.batteries = new ArrayList<>();
     }
-w
+
     //Füge Battery hinzu
     public void addBatteries(Battery battery){this.batteries.add(battery);}
 
