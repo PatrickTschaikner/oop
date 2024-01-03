@@ -1,4 +1,4 @@
-package at.pat.basic.oop.Konto;
+package at.pat.basic.oop.Kontos;
 
 public class Girokonto {
     private double girokontoValue;
