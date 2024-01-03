@@ -1,4 +1,4 @@
-package at.pat.basic.oop.Kontos;
+package at.pat.basic.oop.Konto;
 
 public class Kreditkonto {
     private double kreditkontoValue;
